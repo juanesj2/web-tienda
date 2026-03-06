@@ -54,6 +54,9 @@ RUN mkdir -p database && touch database/database.sqlite && chown -R www-data:www
 # Copy nginx configuration
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 
+# Copy php-fpm pool config (allows inheriting env vars like DATABASE_URL)
+COPY docker/php-fpm.conf /usr/local/etc/php-fpm.d/zz-docker.conf
+
 # Copy supervisor configuration
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
