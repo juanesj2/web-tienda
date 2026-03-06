@@ -17,6 +17,10 @@ php artisan migrate --force
 chown -R www-data:www-data storage bootstrap/cache
 chmod -R 775 storage bootstrap/cache
 
+# Create log directories for supervisor
+mkdir -p /var/log/supervisor /var/log/nginx
+
 # Start supervisor (nginx + php-fpm)
 exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+
 
