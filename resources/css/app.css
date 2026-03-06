@@ -1,0 +1,19 @@
+/* Global Application Styles */
+/* Hide scrollbar completely but allow scrolling */
+::-webkit-scrollbar {
+    display: none;
+}
+html {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Custom Premium Dark Mode Variables */
+[data-bs-theme="dark"] {
+    --bs-body-bg: #030303; /* Deeper black for the main body */
+    --bs-body-bg-rgb: 3, 3, 3;
+    --bs-tertiary-bg: #0a0a0a; /* Slightly lighter for cards/sections */
+    --bs-tertiary-bg-rgb: 10, 10, 10;
+    --bs-secondary-bg: #121212; /* For badges, smaller elements */
+    --bs-secondary-bg-rgb: 18, 18, 18;
+}

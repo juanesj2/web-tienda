@@ -1,0 +1,93 @@
+.aurora-bg-container {
+    position: absolute !important;
+    inset: 0 !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+    background-color: transparent !important;
+}
+
+.aurora-blob {
+    position: absolute;
+    filter: blur(60px); /* Desenfoque ajustado para mayor visibilidad */
+    border-radius: 50%;
+    opacity: 1; /* Opacidad al 100% para que brillen más */
+    animation: floatBlob 25s infinite alternate ease-in-out;
+    will-change: transform;
+}
+
+/* Borde Superior Izquierdo - Al empezar a scrollear */
+.aurora-blob-1 {
+    top: 0%;
+    left: -20%;
+    width: 50vw;
+    height: 70vh;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(56, 189, 248, 0.8) 0%,
+        transparent 70%
+    );
+    animation-duration: 25s;
+    animation-delay: -2s;
+}
+
+/* Borde Centro Derecho - Primera capa de gatos */
+.aurora-blob-2 {
+    top: 25%;
+    right: -25%;
+    width: 60vw;
+    height: 80vh;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(129, 140, 248, 0.7) 0%,
+        transparent 70%
+    );
+    animation-duration: 28s;
+    animation-delay: -5s;
+}
+
+/* Borde Inferior Izquierdo - Segunda capa de gatos */
+.aurora-blob-3 {
+    top: 55%;
+    left: -20%;
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(16, 185, 129, 0.6) 0%,
+        transparent 70%
+    );
+    animation-duration: 32s;
+    animation-delay: -10s;
+}
+
+/* Borde Inferior Derecho - Zona de Contacto */
+.aurora-blob-4 {
+    top: 85%;
+    right: -15%;
+    left: auto;
+    width: 50vw;
+    height: 70vh;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(59, 130, 246, 0.6) 0%,
+        transparent 70%
+    );
+    animation-duration: 22s;
+    animation-delay: -7s;
+}
+
+@keyframes floatBlob {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    33% {
+        transform: translate(5%, -10%) scale(1.1) rotate(2deg);
+    }
+    66% {
+        transform: translate(-10%, 5%) scale(0.9) rotate(-2deg);
+    }
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+}
