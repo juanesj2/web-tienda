@@ -13,10 +13,11 @@ RUN apk add --no-cache \
     unzip \
     sqlite \
     sqlite-dev \
+    postgresql-dev \
     supervisor
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo pdo_sqlite pdo_mysql mbstring exif pcntl bcmath gd xml
+RUN docker-php-ext-install pdo pdo_sqlite pdo_pgsql pdo_mysql mbstring exif pcntl bcmath gd xml
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

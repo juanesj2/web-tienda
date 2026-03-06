@@ -6,6 +6,10 @@ if [ -z "$APP_KEY" ]; then
     php artisan key:generate --force
 fi
 
+# Wait for database to be ready (important for PostgreSQL on Render)
+echo "Waiting for database..."
+sleep 3
+
 # Run migrations
 php artisan migrate --force
 
@@ -15,7 +19,7 @@ php artisan route:cache
 php artisan view:cache
 
 # Fix permissions
-chown -R www-data:www-data storage bootstrap/cache database
+chown -R www-data:www-data storage bootstrap/cache
 chmod -R 775 storage bootstrap/cache
 
 # Start supervisor (nginx + php-fpm)
