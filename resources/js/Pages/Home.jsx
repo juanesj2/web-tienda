@@ -61,7 +61,7 @@ export default function Home() {
             <Head title="Inicio" />
 
             {/* Hero Section */}
-            <div className="container-fluid py-5 min-vh-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden" style={{ minHeight: '110vh', paddingBottom: '10rem !important' }}>
+            <div className="container-fluid py-4 py-md-5 min-vh-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
                 {/* Fading Mask Wrapper for LightRays to avoid sharp bottom cuts */}
                 <div className="position-absolute top-0 start-0 w-100 h-100" style={{
                     maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
@@ -71,7 +71,8 @@ export default function Home() {
                     <LightRays />
                 </div>
                 <motion.div
-                    className="container text-center mt-5 mb-5 pb-5"
+                    className="container text-center mt-4 mt-md-5 mb-4 mb-md-5"
+                    style={{ position: 'relative', zIndex: 1 }}
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
@@ -85,7 +86,7 @@ export default function Home() {
                     {/* Main Headline */}
                     <motion.h1 
                         variants={itemVariants}
-                        className="display-2 fw-bold mb-4"
+                        className="display-4 display-md-2 fw-bold mb-3 mb-md-4"
                     >
                         El Futuro de tu<br/>
                         <span className="text-primary">
@@ -103,17 +104,17 @@ export default function Home() {
                     </motion.p>
 
                     {/* Action Buttons */}
-                    <motion.div variants={itemVariants} className="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                    <motion.div variants={itemVariants} className="d-flex flex-column flex-sm-row justify-content-center gap-3 px-3 px-sm-0">
                         <Link 
                             href="/electrodomesticos" 
-                            className="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-sm d-flex align-items-center justify-content-center gap-2"
+                            className="btn btn-primary btn-lg rounded-pill px-4 px-md-5 py-3 shadow-sm d-flex align-items-center justify-content-center gap-2 w-100 w-sm-auto"
                         >
                             Explorar Catálogo <ChevronRight size={18} />
                         </Link>
                         
                         <Link 
                             href="/servicios" 
-                            className="btn btn-outline-secondary btn-lg rounded-pill px-5 py-3 d-flex align-items-center justify-content-center gap-2"
+                            className="btn btn-outline-secondary btn-lg rounded-pill px-4 px-md-5 py-3 d-flex align-items-center justify-content-center gap-2 w-100 w-sm-auto"
                         >
                             <Wrench size={18} /> Servicio Técnico
                         </Link>
