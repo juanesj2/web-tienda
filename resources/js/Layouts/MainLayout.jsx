@@ -72,7 +72,7 @@ export default function MainLayout({ children }) {
                     </div>
                 </nav>
 
-                <main className="flex-grow-1 position-relative w-100 overflow-hidden" style={{ paddingTop: '60px' }}>
+                <main className="flex-grow-1 position-relative w-100 overflow-hidden">
                     {children}
                 </main>
 

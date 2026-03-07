@@ -61,7 +61,7 @@ export default function Home() {
             <Head title="Inicio" />
 
             {/* Hero Section */}
-            <div className="container-fluid py-4 py-md-5 min-vh-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
+            <div className="container-fluid py-4 py-md-5 min-vh-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden" style={{ paddingTop: 'calc(60px + 1.5rem)' }}>
                 {/* Fading Mask Wrapper for LightRays to avoid sharp bottom cuts */}
                 <div className="position-absolute top-0 start-0 w-100 h-100" style={{
                     maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
@@ -115,6 +115,7 @@ export default function Home() {
                         <Link 
                             href="/servicios" 
                             className="btn btn-outline-secondary btn-lg rounded-pill px-4 px-md-5 py-3 d-flex align-items-center justify-content-center gap-2 w-100 w-sm-auto"
+                            style={{ backgroundColor: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(4px)' }}
                         >
                             <Wrench size={18} /> Servicio Técnico
                         </Link>
