@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, usePage } from "@inertiajs/react";
+import { Link, usePage, Head } from "@inertiajs/react";
 import { ThemeProvider, useTheme } from "../Contexts/ThemeContext";
 import { LanguageProvider, useLanguage } from "../Contexts/LanguageContext";
 import FloatingWidget from "../Components/FloatingWidget";
 import CookieBanner from "../Components/CookieBanner";
+import WhatsAppButton from "../Components/WhatsAppButton";
 import Footer from "../Components/Footer";
 
 export default function MainLayout({ children }) {
@@ -28,6 +29,24 @@ export default function MainLayout({ children }) {
 
     return (
         <div className="min-vh-100 d-flex flex-column" style={{ transition: 'background-color 0.3s ease, color 0.3s ease' }}>
+                <Head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                    <meta name="description" content="Electrónica Unitron - Tu tienda de pueblo de confianza. Venta y reparación de toda clase de electrodomésticos con el trato personal de Juan Vicente." />
+                    <meta name="author" content="Juan Vicente - Electrónica Unitron" />
+                    <meta name="keywords" content="reparación, electrodomésticos, manitas, tienda local, venta, servicio técnico, lavadoras, frigoríficos, televisores, Unitron" />
+                    
+                    {/* Open Graph / Facebook */}
+                    <meta property="og:type" content="website" />
+                    <meta property="og:title" content="Electrónica Unitron" />
+                    <meta property="og:description" content="Venta y reparación de electrodomésticos. Soluciones honestas a precios justos para nuestro pueblo." />
+                    <meta property="og:site_name" content="Electrónica Unitron" />
+                    
+                    {/* Twitter */}
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content="Electrónica Unitron" />
+                    <meta name="twitter:description" content="Venta y reparación de electrodomésticos. Tu tienda de confianza de toda la vida." />
+                </Head>
+
                 <nav className={`navbar navbar-expand-lg fixed-top border-bottom ${isDarkMode ? 'navbar-dark bg-dark border-secondary' : 'navbar-light bg-light border-light-subtle'}`} style={{ backdropFilter: 'blur(10px)', '--bs-bg-opacity': '.9' }}>
                     <div className="container">
                         <Link href="/" className="navbar-brand d-flex align-items-center gap-2">
@@ -77,6 +96,7 @@ export default function MainLayout({ children }) {
                 </main>
 
                 <FloatingWidget />
+                <WhatsAppButton />
                 <CookieBanner />
                 <Footer />
             </div>

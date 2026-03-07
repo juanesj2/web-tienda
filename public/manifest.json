@@ -1,0 +1,28 @@
+{
+  "name": "Electrónica Unitron",
+  "short_name": "Unitron",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d6efd",
+  "description": "Tu tienda y taller de confianza de electrodomésticos gestionada por Juan Vicente.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Wrench_icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Wrench_icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}

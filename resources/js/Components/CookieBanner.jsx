@@ -4,9 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function CookieBanner({ forceShow = false, onClose }) {
     const [isVisible, setIsVisible] = useState(false);
     const [preferences, setPreferences] = useState({
-        necessary: true, // Siempre true
-        analytics: true,
-        marketing: false
+        necessary: true
     });
 
     useEffect(() => {
@@ -21,7 +19,7 @@ export default function CookieBanner({ forceShow = false, onClose }) {
     }, [forceShow]);
 
     const handleAcceptAll = () => {
-        setPreferences({ necessary: true, analytics: true, marketing: true });
+        setPreferences({ necessary: true });
         saveAndClose();
     };
 
@@ -57,49 +55,21 @@ export default function CookieBanner({ forceShow = false, onClose }) {
                             <button onClick={handleCloseModal} className="btn-close" aria-label="Close"></button>
                         </div>
                         <p className="text-secondary">
-                            Utilizamos cookies propias y de terceros para darte la mejor experiencia en Electronia Unitron. 
-                            Puedes aceptar todas o configurar tus preferencias.
+                            En Electrónica Unitron no te espiamos. Solo guardamos una galletita (cookie) técnica en tu navegador para saber si has cerrado este aviso. No rastreamos tus datos ni usamos cookies de terceros.
                         </p>
 
                         <div className="d-flex flex-column gap-3 mb-4">
                             <div className="form-check form-switch d-flex justify-content-between">
                                 <div>
                                     <label className="form-check-label fw-bold">Estrictamente Necesarias</label>
-                                    <small className="d-block text-muted">Aseguran el funcionamiento del sitio. No se pueden desactivar.</small>
+                                    <small className="d-block text-muted">La única cookie que usamos es para quitarte este cartelito molesto de en medio.</small>
                                 </div>
                                 <input className="form-check-input" type="checkbox" checked={true} disabled />
                             </div>
-                            
-                            <div className="form-check form-switch d-flex justify-content-between">
-                                <div>
-                                    <label className="form-check-label fw-bold">Analíticas</label>
-                                    <small className="d-block text-muted">Nos ayudan a entender cómo usas nuestra web.</small>
-                                </div>
-                                <input 
-                                    className="form-check-input" 
-                                    type="checkbox" 
-                                    checked={preferences.analytics} 
-                                    onChange={(e) => setPreferences({...preferences, analytics: e.target.checked})}
-                                />
-                            </div>
-
-                            <div className="form-check form-switch d-flex justify-content-between">
-                                <div>
-                                    <label className="form-check-label fw-bold">Marketing y Anuncios</label>
-                                    <small className="d-block text-muted">Usadas para mostrarte anuncios relevantes.</small>
-                                </div>
-                                <input 
-                                    className="form-check-input" 
-                                    type="checkbox" 
-                                    checked={preferences.marketing} 
-                                    onChange={(e) => setPreferences({...preferences, marketing: e.target.checked})}
-                                />
-                            </div>
                         </div>
 
-                        <div className="d-flex gap-2 justify-content-end">
-                            <button onClick={handleSavePreferences} className="btn btn-outline-secondary rounded-pill px-4">Guardar</button>
-                            <button onClick={handleAcceptAll} className="btn btn-primary rounded-pill px-4">Aceptar Todas</button>
+                        <div className="d-flex justify-content-end">
+                            <button onClick={handleAcceptAll} className="btn btn-primary rounded-pill px-4">Vale, entiendo</button>
                         </div>
                     </motion.div>
                 </div>

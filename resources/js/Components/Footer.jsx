@@ -17,7 +17,7 @@ export default function Footer() {
                             <span className="fs-4 fw-bold text-body">Electronia Unitron</span>
                         </Link>
                         <p className="mb-4 mx-auto mx-lg-0" style={{ maxWidth: '400px' }}>
-                            Innovación constante en el hogar. Líderes en venta y reparación de línea blanca y línea marrón con un servicio técnico de élite inigualable.
+                            Tu tienda de pueblo de confianza. Venta y reparación de toda clase de electrodomésticos con el trato personal de Juan Vicente.
                         </p>
                         <div className="d-flex justify-content-center justify-content-lg-start gap-3">
                             {/* Social Placeholders */}
@@ -46,15 +46,15 @@ export default function Footer() {
                         <ul className="list-unstyled d-flex flex-column gap-3">
                             <li className="d-flex gap-3 align-items-start justify-content-center justify-content-lg-start">
                                 <i className="bi bi-geo-alt-fill text-primary mt-1"></i>
-                                <span>123 Avenida de la Innovación, Parque Tecnológico,<br/> Ciudad Metropolitana, 28000</span>
+                                <span>Plaza Mayor, 12<br/> Nuestro Pueblo, 46000</span>
                             </li>
                             <li className="d-flex gap-3 align-items-center justify-content-center justify-content-lg-start">
                                 <i className="bi bi-envelope-fill text-primary"></i>
-                                <a href="mailto:soporte@electroniaunitron.com" className="text-decoration-none text-body-secondary text-primary-hover">soporte@electroniaunitron.com</a>
+                                <a href="mailto:taller@electronicaunitron.es" className="text-decoration-none text-body-secondary text-primary-hover">taller@electronicaunitron.es</a>
                             </li>
                             <li className="d-flex gap-3 align-items-center justify-content-center justify-content-lg-start">
                                 <i className="bi bi-telephone-fill text-primary"></i>
-                                <span>+34 900 123 456 (Asistencia 24/7)</span>
+                                <span>+34 96 123 45 67 (Pregunta por Juan Vi)</span>
                             </li>
                         </ul>
                     </div>

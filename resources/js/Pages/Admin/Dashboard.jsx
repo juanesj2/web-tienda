@@ -3,7 +3,7 @@ import { Head, Link, usePage } from '@inertiajs/react';
 import MainLayout from '../../Layouts/MainLayout';
 import { useLanguage } from '../../Contexts/LanguageContext';
 import { useTheme } from '../../Contexts/ThemeContext';
-import { Settings, LogOut, Package, Wrench, Users } from 'lucide-react';
+import { Settings, LogOut, Package, Wrench, Users, Camera } from 'lucide-react';
 
 export default function Dashboard() {
     const { t } = useLanguage();
@@ -23,6 +23,13 @@ export default function Dashboard() {
             description: 'Administra las reparaciones y mantenimientos.',
             icon: <Wrench size={32} className={`text-${accentColor}`} />,
             link: route('admin.servicios.index'),
+            count: '-'
+        },
+        {
+            title: 'Portafolio de Trabajos',
+            description: 'Sube fotos del Antes/Después de reparaciones para mostrar a los clientes.',
+            icon: <Camera size={32} className={`text-${accentColor}`} />,
+            link: route('admin.reparaciones.index'),
             count: '-'
         }
     ];

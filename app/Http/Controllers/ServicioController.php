@@ -24,6 +24,17 @@ class ServicioController extends Controller
         ]);
     }
 
+    /**
+     * Muestra los detalles de un servicio específico.
+     * @param Servicio $servicio Inyección de dependencias de Laravel
+     */
+    public function show(Servicio $servicio)
+    {
+        return Inertia::render('Servicios/Show', [
+            'servicio' => $servicio
+        ]);
+    }
+
     // --- MÉTODOS DE ADMINISTRACIÓN (CRUD) --- //
 
     public function adminIndex()

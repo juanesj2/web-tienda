@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Reparacion;
 use Inertia\Inertia; // Importamos Inertia para renderizar React
 
 class PageController extends Controller
@@ -13,8 +14,13 @@ class PageController extends Controller
      */
     public function home()
     {
-        // En lugar de `view('pages.home')`, le decimos a Inertia que renderice el componente de React.
-        return Inertia::render('Home');
+        // Obtain the 3 latest jobs from the portfolio
+        $ultimosTrabajos = Reparacion::orderBy('created_at', 'desc')->take(3)->get();
+
+        // Pass the jobs to the React component
+        return Inertia::render('Home', [
+            'ultimosTrabajos' => $ultimosTrabajos
+        ]);
     }
 
     /**
