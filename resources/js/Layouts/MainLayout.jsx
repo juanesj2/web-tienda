@@ -32,7 +32,7 @@ export default function MainLayout({ children }) {
                     <div className="container">
                         <Link href="/" className="navbar-brand d-flex align-items-center gap-2">
                             <img src="https://flowbite.com/docs/images/logo.svg" height="30" alt="Electronia Logo" />
-                            <strong>Electronia Unitron</strong>
+                            <strong className="d-none d-sm-inline">Electronia Unitron</strong>
                         </Link>
                         <button
                             className="navbar-toggler"
